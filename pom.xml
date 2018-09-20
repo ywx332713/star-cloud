@@ -7,11 +7,72 @@
     <groupId>com.sc</groupId>
     <artifactId>star-cloud</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <modules>
         <module>sc-eureka-server</module>
+        <module>sc-common</module>
     </modules>
 
 
+    <properties>
+        <!-- 当前版本 -->
+        <hol-common.version>1.0.0</hol-common.version>
+        <!-- 工程编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- jdk版本 -->
+        <java.version>1.8</java.version>
+        <!-- maven编译插件版本 -->
+        <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
+        <spring-boot-maven-plugin.version>1.5.14.RELEASE</spring-boot-maven-plugin.version>
+
+        <platform-bom.version>Brussels-SR11</platform-bom.version>
+        <spring-cloud.version>Edgware.SR3</spring-cloud.version>
+        <swagger2.version>2.8.0</swagger2.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <!--公共依赖-->
+        <dependencies>
+            <!-- platform-bom -->
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>${platform-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring-cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--swagger ui-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
