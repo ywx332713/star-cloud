@@ -9,7 +9,7 @@ spring:
         git:
           uri: https://github.com/ywx332713/star-cloud-config.git
           default-label: ${spring.profiles.active}  #解决监控down
-          username: ywx332713@163.com
+          username: ywx332713
           password: ywx-332713
 ---
 spring:
