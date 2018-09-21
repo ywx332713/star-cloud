@@ -4,6 +4,14 @@ spring:
   application:
     name: sc-eureka-server
 
+
+security:
+  basic:
+    enabled: true # 启用身份认证
+  user:
+    name: sc # 定义用户名
+    password: cloud888 # 定义密码
+
 ---
 spring:
   profiles: dev

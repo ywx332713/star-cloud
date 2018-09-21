@@ -11,20 +11,11 @@ spring:
           default-label: ${spring.profiles.active}  #解决监控down
           username: ywx332713@163.com
           password: ywx-332713
-
-# 关闭安全管理
-management:
-  security:
-    enabled: false
-endpoints:
-  health:
-    sensitive: false
-
 ---
 spring:
   profiles: dev
   rabbitmq:
-    host: 192.168.178.29:5672
+    host: localhost:5672
     username: guest
     password: guest
 eureka:
@@ -34,7 +25,7 @@ eureka:
     lease-expiration-duration-in-seconds: 20
   client:
     serviceUrl:
-      defaultZone: http://hol:loh666@localhost:8881/eureka
+      defaultZone: http://sc:cloud888@localhost:8881/eureka
     registry-fetch-interval-seconds: 10
 server:
   port: 8882
@@ -44,8 +35,8 @@ spring:
   profiles: test
   rabbitmq:
     addresses: 192.168.178.38:5672
-    username: jxwl
-    password: HLcTwUG/z7
+    username: guest
+    password: guest
 eureka:
   instance:
     prefer-ip-address: true
@@ -53,7 +44,7 @@ eureka:
     lease-expiration-duration-in-seconds: 20
   client:
     serviceUrl:
-      defaultZone: http://hol:loh666@localhost:8881/eureka
+      defaultZone: http://sc:cloud888@localhost:8881/eureka
     registry-fetch-interval-seconds: 10
 server:
   port: 8882
@@ -63,8 +54,8 @@ spring:
   profiles: pro
   rabbitmq:
     addresses: 192.168.178.38:5672
-    username: jxwl
-    password: HLcTwUG/z7
+    username: guest
+    password: guest
 eureka:
   instance:
     prefer-ip-address: true
@@ -72,7 +63,7 @@ eureka:
     lease-expiration-duration-in-seconds: 20
   client:
     serviceUrl:
-      defaultZone: http://hol:loh666@localhost:8881/eureka
+      defaultZone: http://sc:cloud888@localhost:8881/eureka
     registry-fetch-interval-seconds: 10
 server:
   port: 8882
